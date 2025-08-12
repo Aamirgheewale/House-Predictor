@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HousePredict - Predict Your House Price</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="logo">
+                    <span class="logo-text">HousePredict</span>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search properties, locations..." class="search-input">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="header-btn">
+                        <span>My Predictions</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">All Properties</a></li>
+                    <li><a href="#" class="nav-link">Real Estate</a></li>
+                    <li><a href="#" class="nav-link">Predictions</a></li>
+                    <li><a href="#" class="nav-link">Market Trends</a></li>
+                    <li><a href="#" class="nav-link">Account</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Predict Your House Price</h1>
+                <p>Get accurate house price predictions powered by advanced machine learning algorithms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Prediction Form -->
+            <section class="prediction-section">
+                <div class="form-container">
+                    <h2>House Details</h2>
+                    <form id="predictionForm" class="prediction-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="area" class="form-label">Area (sq ft)</label>
+                                <input type="number" id="area" name="area" class="form-control" min="1000" max="20000" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bedrooms" class="form-label">Bedrooms</label>
+                                <select id="bedrooms" name="bedrooms" class="form-control" required>
+                                    <option value="">Select bedrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bathrooms" class="form-label">Bathrooms</label>
+                                <select id="bathrooms" name="bathrooms" class="form-control" required>
+                                    <option value="">Select bathrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="stories" class="form-label">Stories</label>
+                                <select id="stories" name="stories" class="form-control" required>
+                                    <option value="">Select stories</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mainroad" class="form-label">Main Road Access</label>
+                                <select id="mainroad" name="mainroad" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="guestroom" class="form-label">Guest Room</label>
+                                <select id="guestroom" name="guestroom" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="basement" class="form-label">Basement</label>
+                                <select id="basement" name="basement" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hotwaterheating" class="form-label">Hot Water Heating</label>
+                                <select id="hotwaterheating" name="hotwaterheating" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="airconditioning" class="form-label">Air Conditioning</label>
+                                <select id="airconditioning" name="airconditioning" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="parking" class="form-label">Parking Spaces</label>
+                                <select id="parking" name="parking" class="form-control" required>
+                                    <option value="">Select parking spaces</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="prefarea" class="form-label">Preferred Area</label>
+                                <select id="prefarea" name="prefarea" class="form-control" required>
+                                    <option value="">Select option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Furnishing Status</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="furnishingstatus" value="furnished" required>
+                                    <span class="radio-text">Furnished</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="furnishingstatus" value="semi-furnished" required>
+                                    <span class="radio-text">Semi-furnished</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="furnishingstatus" value="unfurnished" required>
+                                    <span class="radio-text">Unfurnished</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="predict-btn">
+                            <span class="btn-text">Predict Price</span>
+                            <div class="btn-loader hidden">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section hidden">
+                <div class="results-container">
+                    <div class="results-header">
+                        <h3>Price Prediction Result</h3>
+                    </div>
+                    <div class="results-content">
+                        <div class="predicted-price">
+                            <span class="price-label">Predicted Price:</span>
+                            <span id="predictedPrice" class="price-value">₹0</span>
+                        </div>
+                        <div class="results-actions">
+                            <button class="btn btn--outline save-prediction-btn">Add to Wishlist</button>
+                            <button class="btn btn--primary new-prediction-btn">New Prediction</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2>Sample Predictions</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="card-badge">Premium</div>
+                        <div class="card-content">
+                            <h3>Luxury Villa</h3>
+                            <div class="property-details">
+                                <span>7,500 sq ft</span>
+                                <span>4 bed, 3 bath</span>
+                            </div>
+                            <div class="predicted-price-card">
+                                <span class="price-value">₹85,00,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="card-badge">Popular</div>
+                        <div class="card-content">
+                            <h3>Modern Apartment</h3>
+                            <div class="property-details">
+                                <span>4,500 sq ft</span>
+                                <span>3 bed, 2 bath</span>
+                            </div>
+                            <div class="predicted-price-card">
+                                <span class="price-value">₹42,00,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="card-badge">Recommended</div>
+                        <div class="card-content">
+                            <h3>Family Home</h3>
+                            <div class="property-details">
+                                <span>6,000 sq ft</span>
+                                <span>3 bed, 2 bath</span>
+                            </div>
+                            <div class="predicted-price-card">
+                                <span class="price-value">₹55,00,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li><a href="#">About HousePredict</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li><a href="#">Sell Properties</a></li>
+                        <li><a href="#">Advertise Your Products</a></li>
+                        <li><a href="#">Become an Agent</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>HousePredict Payment</h4>
+                    <ul>
+                        <li><a href="#">Your Account</a></li>
+                        <li><a href="#">Payment Methods</a></li>
+                        <li><a href="#">HousePredict Currency</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HousePredict.com, Inc. or its affiliates</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
