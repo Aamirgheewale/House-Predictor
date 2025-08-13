@@ -1,4 +1,4 @@
-House-Predictor
+#House-Predictor
 Reimagine House Price Prediction, Simplified.
 House-Predictor is prototype—a sleek, client-side JavaScript-based tool (HTML/CSS/JS) built to predict house prices directly in the browser. Light, agile, and instantly interactive.
 
